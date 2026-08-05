@@ -15,6 +15,10 @@
       --border: #d8e2ec;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
@@ -57,9 +61,13 @@
       margin: 0 auto 16px auto;
     }
 
-    .links a {
+    nav {
+      margin-top: 18px;
+    }
+
+    nav a {
       display: inline-block;
-      margin: 6px 10px;
+      margin: 6px 8px;
       color: white;
       background: var(--blue);
       text-decoration: none;
@@ -68,7 +76,7 @@
       font-size: 0.95rem;
     }
 
-    .links a:hover {
+    nav a:hover {
       background: var(--navy);
     }
 
@@ -127,119 +135,3 @@
       text-align: center;
       margin-top: 34px;
       padding-top: 20px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 700px) {
-      .panel {
-        padding: 22px;
-      }
-
-      h1 {
-        font-size: 1.9rem;
-      }
-
-      .links a {
-        display: block;
-        margin: 10px auto;
-        max-width: 220px;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-photo {
-        width: 100%;
-        max-width: 280px;
-        height: auto;
-        margin: 0 auto;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <div class="panel">
-      <header>
-        <h1>Jeff Donohoe</h1>
-        <p class="tagline">
-          Director of IT Systems in the nonprofit and government sector, building a portfolio for GIS and wildlife-focused work.
-        </p>
-        <p class="links">
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">StoryMaps</a>
-        </p>
-      </header>
-
-      <section>
-        <h2>About Me</h2>
-        <div class="about-grid">
-          <div>
-            <img src="DSCN1704.JPG" alt="Grand Staircase-Escalante, Utah" class="about-photo">
-            <p class="caption">Jeff Donohoe in the field — connecting outdoors, wildlife, and GIS.</p>
-          </div>
-          <div>
-            <p>
-              I hold a Master’s in GIS from Kent State University and have spent years working in IT systems leadership in nonprofit and government settings.
-              I’m now building a portfolio that reflects my interests in GIS, wildlife conservation, and work tied to wild places, nature, and outdoor adventure.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Featured Projects</h2>
-
-        <div class="card">
-          <h3>Isle Royale Wildlife Mapping</h3>
-          <p>Graduate work focused on wolves, moose, and herbivory on Isle Royale.</p>
-        </div>
-
-        <div class="card">
-          <h3>Metro Chicagoland Coyote Locations</h3>
-          <p>GIS project exploring coyote locations and spatial patterns in the Chicago metro area.</p>
-        </div>
-
-        <div class="card">
-          <h3>Lake County, IL Land Cover Project</h3>
-          <p>Land use / land cover work for Lake County, Illinois, using historical data from 1990 to 2004.</p>
-        </div>
-
-        <div class="card">
-          <h3>Current Trail and Wildlife Tracking Project</h3>
-          <p>In progress: GPS waypoints for Lake County forest preserve trails, including animal sightings and related observations.</p>
-        </div>
-      </section>
-
-      <section>
-        <h2>Skills</h2>
-        <ul>
-          <li>GIS and cartography</li>
-          <li>ArcGIS Pro and StoryMaps</li>
-          <li>Data organization and systems thinking</li>
-          <li>IT leadership and operations</li>
-          <li>Wildlife and conservation-oriented mapping</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Interests</h2>
-        <p>Wildlife conservation, wild places, adventures, the outdoors, and nature photography / exploration.</p>
-      </section>
-
-      <section>
-        <h2>Next Steps</h2>
-        <p>As this site grows, I’ll add project links, map examples, GitHub repositories, and StoryMaps write-ups.</p>
-      </section>
-
-      <footer>
-        <p>Contact: jmdonohoe@comcast.net</p>
-      </footer>
-    </div>
-  </div>
-</body>
-</html>
