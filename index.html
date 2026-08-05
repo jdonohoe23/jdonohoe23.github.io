@@ -1,3 +1,8 @@
+Yes — upload `DSCN1704.jpg` into the same repo as `index.html` using **Add file → Upload files**, or drag it into the repo page and commit it. If you want a neat folder instead, put it in something like `images/DSCN1704.jpg` and change the HTML `src` to `images/DSCN1704.jpg`. [github](https://github.blog/developer-skills/github/beginners-guide-to-github-uploading-files-and-folders-to-github/)
+
+Here’s a more polished version with blue tones, centered layout, and the photo built in:
+
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,147 +10,221 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jeff Donohoe | GIS Portfolio</title>
   <style>
+    :root {
+      --navy: #16324f;
+      --blue: #2f6fb0;
+      --light-blue: #eaf3fb;
+      --soft-blue: #f4f8fc;
+      --text: #1f2933;
+      --muted: #52616b;
+      --border: #d8e2ec;
+    }
+
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
       margin: 0;
-      color: #222;
-      background: #f7f7f7;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--light-blue), #ffffff 30%);
     }
+
     .wrap {
-      max-width: 950px;
-      margin: 0 auto;
-      padding: 40px 20px;
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .panel {
       background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(22, 50, 79, 0.08);
+      padding: 36px;
     }
+
     header {
-      padding-bottom: 20px;
-      border-bottom: 1px solid #ddd;
-      margin-bottom: 30px;
+      text-align: center;
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border);
     }
-    h1, h2, h3 {
-      margin-bottom: 10px;
+
+    h1 {
+      margin: 0 0 8px 0;
+      color: var(--navy);
+      font-size: 2.4rem;
     }
+
     .tagline {
-      color: #555;
+      color: var(--muted);
       font-size: 1.1rem;
+      max-width: 760px;
+      margin: 0 auto 16px auto;
     }
-    .card {
-      background: #fafafa;
-      border: 1px solid #e5e5e5;
-      padding: 16px;
-      margin: 16px 0;
-      border-radius: 8px;
-    }
+
     .links a {
       display: inline-block;
-      margin-right: 12px;
+      margin: 6px 10px;
+      color: white;
+      background: var(--blue);
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.95rem;
     }
+
+    .links a:hover {
+      background: var(--navy);
+    }
+
+    section {
+      margin: 28px 0;
+    }
+
+    h2 {
+      color: var(--navy);
+      border-left: 6px solid var(--blue);
+      padding-left: 12px;
+      margin-bottom: 14px;
+    }
+
     .about-photo {
+      display: block;
       max-width: 100%;
+      width: 560px;
+      margin: 16px auto 8px auto;
       height: auto;
-      border-radius: 10px;
-      margin: 10px 0 8px 0;
+      border-radius: 14px;
+      border: 1px solid var(--border);
     }
+
     .caption {
+      text-align: center;
       font-style: italic;
-      color: #555;
+      color: var(--muted);
       margin-top: 0;
     }
-    ul {
-      padding-left: 20px;
+
+    .card {
+      background: var(--soft-blue);
+      border: 1px solid var(--border);
+      padding: 18px;
+      margin: 16px 0;
+      border-radius: 12px;
     }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--blue);
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
     footer {
-      margin-top: 40px;
+      text-align: center;
+      margin-top: 34px;
       padding-top: 20px;
-      border-top: 1px solid #ddd;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
       font-size: 0.95rem;
-      color: #555;
+    }
+
+    @media (max-width: 640px) {
+      .panel {
+        padding: 22px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      .links a {
+        display: block;
+        margin: 10px auto;
+        max-width: 220px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <h1>Jeff Donohoe</h1>
-      <p class="tagline">Director of IT Systems in the nonprofit and government sector, building a portfolio for GIS and wildlife-focused work.</p>
-      <p class="links">
-        <a href="#">GitHub</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">StoryMaps</a>
-      </p>
-    </header>
-
-    <section>
-      <h2>About Me</h2>
-      <img src="DSCN1704.jpg" alt="Jeff Donohoe outdoors at a canyon overlook" class="about-photo">
-      <p class="caption">Jeff Donohoe in the field — connecting outdoors, wildlife, and GIS.</p>
-      <p>
-        I hold a Master’s in GIS from Kent State University and have spent years working in IT systems leadership in nonprofit and government settings.
-        I’m now building a portfolio that reflects my interests in GIS, wildlife conservation, and work tied to wild places, nature, and outdoor adventure.
-      </p>
-    </section>
-
-    <section>
-      <h2>Featured Projects</h2>
-
-      <div class="card">
-        <h3>Isle Royale Wildlife Mapping</h3>
-        <p>
-          Graduate work focused on wolves, moose, and herbivory on Isle Royale.
+    <div class="panel">
+      <header>
+        <h1>Jeff Donohoe</h1>
+        <p class="tagline">
+          Director of IT Systems in the nonprofit and government sector, building a portfolio for GIS and wildlife-focused work.
         </p>
-      </div>
-
-      <div class="card">
-        <h3>Metro Chicagoland Coyote Locations</h3>
-        <p>
-          GIS project exploring coyote locations and spatial patterns in the Chicago metro area.
+        <p class="links">
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">StoryMaps</a>
         </p>
-      </div>
+      </header>
 
-      <div class="card">
-        <h3>Lake County, IL Land Cover Project</h3>
+      <section>
+        <h2>About Me</h2>
+        <img src="DSCN1704.jpg" alt="Jeff Donohoe outdoors at a canyon overlook" class="about-photo">
+        <p class="caption">Jeff Donohoe in the field — connecting outdoors, wildlife, and GIS.</p>
         <p>
-          Land use / land cover work for Lake County, Illinois, using historical data from 1990 to 2004.
+          I hold a Master’s in GIS from Kent State University and have spent years working in IT systems leadership in nonprofit and government settings.
+          I’m now building a portfolio that reflects my interests in GIS, wildlife conservation, and work tied to wild places, nature, and outdoor adventure.
         </p>
-      </div>
+      </section>
 
-      <div class="card">
-        <h3>Current Trail and Wildlife Tracking Project</h3>
-        <p>
-          In progress: GPS waypoints for Lake County forest preserve trails, including animal sightings and related observations.
-        </p>
-      </div>
-    </section>
+      <section>
+        <h2>Featured Projects</h2>
 
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>GIS and cartography</li>
-        <li>ArcGIS Pro and StoryMaps</li>
-        <li>Data organization and systems thinking</li>
-        <li>IT leadership and operations</li>
-        <li>Wildlife and conservation-oriented mapping</li>
-      </ul>
-    </section>
+        <div class="card">
+          <h3>Isle Royale Wildlife Mapping</h3>
+          <p>Graduate work focused on wolves, moose, and herbivory on Isle Royale.</p>
+        </div>
 
-    <section>
-      <h2>Interests</h2>
-      <p>
-        Wildlife conservation, wild places, adventures, the outdoors, and nature photography / exploration.
-      </p>
-    </section>
+        <div class="card">
+          <h3>Metro Chicagoland Coyote Locations</h3>
+          <p>GIS project exploring coyote locations and spatial patterns in the Chicago metro area.</p>
+        </div>
 
-    <section>
-      <h2>Next Steps</h2>
-      <p>
-        As this site grows, I’ll add project links, map examples, GitHub repositories, and StoryMaps write-ups.
-      </p>
-    </section>
+        <div class="card">
+          <h3>Lake County, IL Land Cover Project</h3>
+          <p>Land use / land cover work for Lake County, Illinois, using historical data from 1990 to 2004.</p>
+        </div>
 
-    <footer>
-      <p>Contact: jmdonohoe@comcast.net</p>
-    </footer>
+        <div class="card">
+          <h3>Current Trail and Wildlife Tracking Project</h3>
+          <p>In progress: GPS waypoints for Lake County forest preserve trails, including animal sightings and related observations.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Skills</h2>
+        <ul>
+          <li>GIS and cartography</li>
+          <li>ArcGIS Pro and StoryMaps</li>
+          <li>Data organization and systems thinking</li>
+          <li>IT leadership and operations</li>
+          <li>Wildlife and conservation-oriented mapping</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Interests</h2>
+        <p>Wildlife conservation, wild places, adventures, the outdoors, and nature photography / exploration.</p>
+      </section>
+
+      <section>
+        <h2>Next Steps</h2>
+        <p>As this site grows, I’ll add project links, map examples, GitHub repositories, and StoryMaps write-ups.</p>
+      </section>
+
+      <footer>
+        <p>Contact: jmdonohoe@comcast.net</p>
+      </footer>
+    </div>
   </div>
 </body>
 </html>
+```
+
+If you want, I can next make the project cards look a little more like a real portfolio with icons, buttons, and stronger spacing.
