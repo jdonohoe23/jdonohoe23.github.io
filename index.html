@@ -1,8 +1,3 @@
-Yes — upload `DSCN1704.jpg` into the same repo as `index.html` using **Add file → Upload files**, or drag it into the repo page and commit it. If you want a neat folder instead, put it in something like `images/DSCN1704.jpg` and change the HTML `src` to `images/DSCN1704.jpg`. [github](https://github.blog/developer-skills/github/beginners-guide-to-github-uploading-files-and-folders-to-github/)
-
-Here’s a more polished version with blue tones, centered layout, and the photo built in:
-
-```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -88,21 +83,27 @@ Here’s a more polished version with blue tones, centered layout, and the photo
       margin-bottom: 14px;
     }
 
+    .about-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 24px;
+      align-items: start;
+      margin-top: 16px;
+    }
+
     .about-photo {
-      display: block;
-      max-width: 100%;
-      width: 560px;
-      margin: 16px auto 8px auto;
-      height: auto;
-      border-radius: 14px;
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
       border: 1px solid var(--border);
+      display: block;
     }
 
     .caption {
-      text-align: center;
       font-style: italic;
       color: var(--muted);
-      margin-top: 0;
+      margin: 10px 0 0 0;
     }
 
     .card {
@@ -131,7 +132,7 @@ Here’s a more polished version with blue tones, centered layout, and the photo
       font-size: 0.95rem;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 700px) {
       .panel {
         padding: 22px;
       }
@@ -144,6 +145,17 @@ Here’s a more polished version with blue tones, centered layout, and the photo
         display: block;
         margin: 10px auto;
         max-width: 220px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-photo {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        margin: 0 auto;
       }
     }
   </style>
@@ -165,12 +177,18 @@ Here’s a more polished version with blue tones, centered layout, and the photo
 
       <section>
         <h2>About Me</h2>
-        <img src="DSCN1704.jpg" alt="Jeff Donohoe outdoors at a canyon overlook" class="about-photo">
-        <p class="caption">Jeff Donohoe in the field — connecting outdoors, wildlife, and GIS.</p>
-        <p>
-          I hold a Master’s in GIS from Kent State University and have spent years working in IT systems leadership in nonprofit and government settings.
-          I’m now building a portfolio that reflects my interests in GIS, wildlife conservation, and work tied to wild places, nature, and outdoor adventure.
-        </p>
+        <div class="about-grid">
+          <div>
+            <img src="DSCN1704.jpg" alt="Jeff Donohoe outdoors at a canyon overlook" class="about-photo">
+            <p class="caption">Jeff Donohoe in the field — connecting outdoors, wildlife, and GIS.</p>
+          </div>
+          <div>
+            <p>
+              I hold a Master’s in GIS from Kent State University and have spent years working in IT systems leadership in nonprofit and government settings.
+              I’m now building a portfolio that reflects my interests in GIS, wildlife conservation, and work tied to wild places, nature, and outdoor adventure.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section>
@@ -225,6 +243,3 @@ Here’s a more polished version with blue tones, centered layout, and the photo
   </div>
 </body>
 </html>
-```
-
-If you want, I can next make the project cards look a little more like a real portfolio with icons, buttons, and stronger spacing.
