@@ -15,6 +15,7 @@
       --green: #3f7f57;
       --border: rgba(255,255,255,0.09);
       --card: rgba(255,255,255,0.05);
+      --card-2: rgba(255,255,255,0.03);
     }
 
     * { box-sizing: border-box; }
@@ -108,48 +109,20 @@
       padding: 30px;
     }
 
-    details {
-      background: var(--card);
+    section {
+      margin-bottom: 18px;
+      background: var(--card-2);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      margin-bottom: 14px;
+      border-radius: 18px;
       overflow: hidden;
     }
 
-    summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 16px 18px;
-      font-weight: bold;
-      color: #fff;
-      background: rgba(255,255,255,0.03);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-    }
-
-    summary::-webkit-details-marker { display: none; }
-
-    summary::after {
-      content: "+";
-      color: var(--green);
-      font-size: 1.35rem;
-      line-height: 1;
-    }
-
-    details[open] summary::after { content: "–"; }
-
-    .section-body {
-      padding: 0 18px 18px;
-      color: var(--muted);
-    }
-
-    .section-head {
+    .section-title {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin: 12px 0 14px;
+      padding: 16px 18px 0;
+      margin-bottom: 10px;
     }
 
     .section-dot {
@@ -161,14 +134,26 @@
       flex: 0 0 auto;
     }
 
+    section h2 {
+      margin: 0;
+      color: #fff;
+      font-size: 1.25rem;
+    }
+
+    .section-body {
+      padding: 0 18px 18px;
+      color: var(--muted);
+    }
+
     .profile-grid {
       display: grid;
       grid-template-columns: 280px 1fr;
       gap: 20px;
       align-items: start;
+      margin-top: 10px;
     }
 
-    .photo-card, .card, .resume-box {
+    .photo-card, .card, .resume-box, .contact-box {
       background: rgba(255,255,255,0.04);
       border: 1px solid var(--border);
       border-radius: 16px;
@@ -204,6 +189,7 @@
       margin-top: 0;
       margin-bottom: 8px;
       color: #fff;
+      line-height: 1.2;
     }
 
     .card p {
@@ -228,13 +214,43 @@
       font-size: 0.92rem;
     }
 
-    .resume-box a {
-      color: #dbeafe;
-      font-weight: bold;
-      text-decoration: none;
+    .contact-box p {
+      margin-top: 0;
     }
 
-    .resume-box a:hover { text-decoration: underline; }
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-weight: bold;
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .contact-btn.linkedin {
+      background: #2f6fb0;
+    }
+
+    .contact-btn.email {
+      background: #3f7f57;
+    }
+
+    .contact-btn.github {
+      background: #243447;
+    }
 
     footer {
       text-align: center;
@@ -278,17 +294,17 @@
           <a href="#portfolio">Portfolio</a>
           <a href="#skills">Skills</a>
           <a href="#interests">Interests</a>
+          <a href="#contact">Contact</a>
         </nav>
       </header>
 
       <div class="content">
-        <details open id="about">
-          <summary>About Me</summary>
+        <section id="about">
+          <div class="section-title">
+            <span class="section-dot"></span>
+            <h2>About Me</h2>
+          </div>
           <div class="section-body">
-            <div class="section-head">
-              <span class="section-dot"></span>
-              <span>Background and focus</span>
-            </div>
             <div class="profile-grid">
               <div class="photo-card">
                 <img src="DSCN1704.JPG" alt="Grand Staircase-Escalante, Utah" class="about-photo">
@@ -308,20 +324,26 @@
               </div>
             </div>
           </div>
-        </details>
+        </section>
 
-        <details id="resume">
-          <summary>Resume</summary>
+        <section id="resume">
+          <div class="section-title">
+            <span class="section-dot"></span>
+            <h2>Resume</h2>
+          </div>
           <div class="section-body">
             <div class="resume-box">
               <p><strong>Resume:</strong> Add a PDF later or link to a file in your repository.</p>
               <p><a href="#">Download Resume</a></p>
             </div>
           </div>
-        </details>
+        </section>
 
-        <details open id="portfolio">
-          <summary>Portfolio</summary>
+        <section id="portfolio">
+          <div class="section-title">
+            <span class="section-dot"></span>
+            <h2>Portfolio</h2>
+          </div>
           <div class="section-body">
             <div class="cards">
               <div class="card">
@@ -346,10 +368,13 @@
               </div>
             </div>
           </div>
-        </details>
+        </section>
 
-        <details id="skills">
-          <summary>Skills</summary>
+        <section id="skills">
+          <div class="section-title">
+            <span class="section-dot"></span>
+            <h2>Skills</h2>
+          </div>
           <div class="section-body">
             <div class="card">
               <div class="pill-row">
@@ -371,16 +396,36 @@
               </div>
             </div>
           </div>
-        </details>
+        </section>
 
-        <details id="interests">
-          <summary>Interests</summary>
+        <section id="interests">
+          <div class="section-title">
+            <span class="section-dot"></span>
+            <h2>Interests</h2>
+          </div>
           <div class="section-body">
             <div class="card">
               <p>Wildlife conservation, wild places, adventures, the outdoors, and nature photography / exploration.</p>
             </div>
           </div>
-        </details>
+        </section>
+
+        <section id="contact">
+          <div class="section-title">
+            <span class="section-dot"></span>
+            <h2>Contact</h2>
+          </div>
+          <div class="section-body">
+            <div class="contact-box">
+              <p>Let’s connect about GIS, conservation, IT systems, or portfolio work.</p>
+              <div class="contact-buttons">
+                <a href="#" class="contact-btn linkedin">LinkedIn</a>
+                <a href="mailto:jmdonohoe@comcast.net" class="contact-btn email">Email</a>
+                <a href="#" class="contact-btn github">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
 
       <footer>
