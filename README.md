@@ -1,2 +1,2 @@
 # jdonohoe23.github.io
-Main personal site.
+Professional and GIS Portfolio.
