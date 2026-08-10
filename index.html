@@ -1,3 +1,6 @@
+Yes — here is the full updated `index.html` with your Lake County LULC image included in Project 05. It uses the relative image path `images/projects/lulc_agr_lcil_.jpg`, which is the right structure for an image stored in that repository folder. [github](https://github.com/orgs/community/discussions/21720)
+
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -59,8 +62,6 @@
       background: linear-gradient(180deg, rgba(23,39,53,0.98), rgba(26,51,64,0.96));
       box-shadow: 0 25px 70px var(--shadow);
     }
-
-    /* Header */
 
     .hero {
       position: relative;
@@ -142,8 +143,6 @@
       transform: translateY(-2px);
     }
 
-    /* Main sections */
-
     .content {
       padding: 32px;
     }
@@ -189,8 +188,6 @@
       padding: 17px 22px 23px;
       color: var(--muted);
     }
-
-    /* About section */
 
     .profile-grid {
       display: grid;
@@ -255,8 +252,6 @@
       color: #d9f0df;
     }
 
-    /* Resume */
-
     .resume-box {
       background:
         linear-gradient(135deg, rgba(90,151,214,0.12), rgba(63,127,87,0.10)),
@@ -279,8 +274,6 @@
       background: var(--evergreen);
       transform: translateY(-2px);
     }
-
-    /* Portfolio */
 
     .portfolio-intro {
       max-width: 820px;
@@ -313,9 +306,19 @@
       top: 0;
       bottom: 0;
       left: 0;
+      z-index: 1;
       width: 5px;
       background: var(--evergreen);
       content: "";
+    }
+
+    .project-image {
+      display: block;
+      width: calc(100% + 38px);
+      max-height: 230px;
+      margin: -19px -19px 18px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--line);
     }
 
     .project-number {
@@ -370,8 +373,6 @@
       text-decoration: underline;
     }
 
-    /* Skills */
-
     .skill-group {
       margin-bottom: 21px;
     }
@@ -386,8 +387,6 @@
       font-size: 1.08rem;
       font-weight: normal;
     }
-
-    /* Contact */
 
     .contact-box {
       background:
@@ -441,8 +440,6 @@
       background: #756036;
     }
 
-    /* Footer */
-
     footer {
       padding: 22px 25px 28px;
       border-top: 1px solid var(--line);
@@ -451,8 +448,6 @@
       font-size: 0.9rem;
       text-align: center;
     }
-
-    /* Mobile */
 
     @media (max-width: 840px) {
       .profile-grid,
@@ -505,7 +500,6 @@
       <header class="hero" id="home">
         <div class="hero-content">
           <p class="eyebrow">GIS • Conservation • Systems</p>
-
           <h1>Jeff Donohoe</h1>
 
           <p class="subtitle">
@@ -535,14 +529,12 @@
 
           <div class="section-body">
             <div class="profile-grid">
-
               <div class="photo-card">
                 <img
                   src="DSCN1704.JPG"
                   alt="Jeff Donohoe outdoors in Grand Staircase-Escalante, Utah"
                   class="about-photo"
                 >
-
                 <p class="caption">
                   In the field — connecting outdoors, wildlife, and GIS.
                 </p>
@@ -569,7 +561,6 @@
                   <span class="pill">IT Leadership</span>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
@@ -591,7 +582,6 @@
                 A downloadable resume will be added here as the portfolio develops.
               </p>
 
-              <!-- Replace # with your resume file later -->
               <a href="#" class="button">Download Resume</a>
             </div>
           </div>
@@ -625,9 +615,6 @@
                   <span class="project-tag">Recovery</span>
                   <span class="project-tag">Mapping</span>
                 </div>
-                <!-- Add a project link later:
-                <a href="#" class="project-link">View project →</a>
-                -->
               </article>
 
               <article class="card project-card">
@@ -676,11 +663,17 @@
               </article>
 
               <article class="card project-card">
+                <img
+                  src="images/projects/lulc_agr_lcil_.jpg"
+                  alt="Land use and land cover map for Lake County, Illinois"
+                  class="project-image"
+                >
+
                 <span class="project-number">PROJECT 05</span>
                 <h3>Lake County, Illinois LULC 1990–2005</h3>
                 <p>
                   Land-use and land-cover analysis comparing historical patterns
-                  across Lake County, Illinois. The project demonstrates long-term
+                  across Lake County, Illinois. This project demonstrates long-term
                   spatial change analysis and cartographic presentation.
                 </p>
                 <div class="project-footer">
@@ -688,6 +681,14 @@
                   <span class="project-tag">Change</span>
                   <span class="project-tag">Cartography</span>
                 </div>
+
+                <!-- Add a PDF, StoryMap, or project page link later:
+                <a href="documents/lake-county-lulc-project.pdf"
+                   class="project-link"
+                   target="_blank">
+                  View project →
+                </a>
+                -->
               </article>
 
               <article class="card project-card">
@@ -798,7 +799,6 @@
               </p>
 
               <div class="contact-buttons">
-                <!-- Replace # with your LinkedIn URL -->
                 <a href="#" class="contact-button linkedin">LinkedIn</a>
 
                 <a
@@ -808,10 +808,8 @@
                   Email
                 </a>
 
-                <!-- Replace # with your GitHub URL -->
                 <a href="#" class="contact-button github">GitHub</a>
 
-                <!-- Replace # with your StoryMaps URL later -->
                 <a href="#" class="contact-button storymaps">StoryMaps</a>
               </div>
             </div>
@@ -830,3 +828,4 @@
   </div>
 </body>
 </html>
+```
